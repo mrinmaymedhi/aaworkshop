@@ -1,23 +1,19 @@
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Astronomy & Astrophysics Workshop</title>
+    <!-- Include Tailwind CSS from CDN, as specified in the original index.html -->
     <script src="https://cdn.tailwindcss.com"></script>
-  <script type="importmap">
-{
-  "imports": {
-    "react/": "https://aistudiocdn.com/react@^19.2.0/",
-    "react": "https://aistudiocdn.com/react@^19.2.0",
-    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/"
-  }
-}
-</script>
-</head>
+  </head>
   <body>
-    <div id="root"></div>
-    <script type="module" src="/index.tsx"></script>
+    <!-- The root container, equivalent to what React would mount into -->
+    <div id="root" class="min-h-screen bg-neutral-50 text-neutral-900 selection:bg-rose-200/60">
+      <!-- Content will be dynamically injected here by app.js -->
+    </div>
+
+    <!-- Include the main JavaScript file -->
+    <script src="app.js"></script>
   </body>
 </html>
