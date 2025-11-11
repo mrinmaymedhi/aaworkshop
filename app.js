@@ -35,7 +35,7 @@ const organisers = [
     },
     {
         name: 'Bhattadev University',
-        description: 'A state public university located in Pathsala (Bajali district), established under the Bhattadev University Act, 2017. Emerging from the historic Bajali College, it offers UG and PG programmes across Science, Arts, and Commerce, fostering knowledge and regional development.',
+        description: 'A state public university located in Pathsala (Bajali district), established under the Bhattadev University Act, 2017. Emerging from the historic Bajali College, it offers UG, PG & PhD programmes across Science, Arts, and Commerce, fostering knowledge and regional development.',
         imageUrl: 'https://www.bhattadevuniversity.ac.in/images/bd_icon.png',
         websiteUrl: 'https://www.bhattadevuniversity.ac.in/index.jsp'
     },
@@ -360,6 +360,7 @@ document.addEventListener('DOMContentLoaded', () => {
     renderWorkshopLanding();
     setupSmoothScroll();
 });
+
 
 
 
