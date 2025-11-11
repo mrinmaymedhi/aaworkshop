@@ -8,54 +8,42 @@ const importantDates = [
 ];
 
 const importantUpdates = [
-  { title: 'List of selected participants has been published.', date: '10 Jan 2026', url: '#', new: true },
-  { title: 'Application deadline is approaching.', date: '15 Dec 2025', url: '#' },
-  { title: 'Workshop announced and applications open.', date: '01 Nov 2025', url: '#' },
+  { title: 'Application link is now live.', date: '11 Nov 2025', url: '#', new: true },
+  { title: 'Download workshop poster.', date: '', url: 'AA_Workshop_Poster.pdf', new: true },
 ];
 
 const resourcePersons = [
-  { name: 'Prof. Kanak Saha', inst: 'IUCAA', imageUrl: 'https://robohash.org/kanak.png?set=set4&size=256x256', profileUrl: '#' },
-  { name: 'Dr. Sukanta Deb', inst: 'Cotton University', imageUrl: 'https://robohash.org/sukanta.png?set=set4&size=256x256', profileUrl: '#' },
-  { name: 'Dr. Rupjyoti Gogoi', inst: 'Tezpur University', imageUrl: 'https://robohash.org/rupjyoti.png?set=set4&size=256x256', profileUrl: '#' },
-  { name: 'Dr. Biman Jyoti Medhi', inst: 'Gauhati University', imageUrl: 'https://robohash.org/biman.png?set=set4&size=256x256', profileUrl: '#' },
-  { name: 'Dr. Debasish Borah', inst: 'IIT Guwahati', imageUrl: 'https://robohash.org/debasish.png?set=set4&size=256x256', profileUrl: '#' },
+  { name: 'Prof. Kanak Saha', inst: 'IUCAA', imageUrl: 'https://www.iucaa.in/images/Research_files/Faculty/Kanak_Saha.jpg', profileUrl: 'https://www.iucaa.in/en/faculty-research/kanak' },
+  { name: 'Dr. Sukanta Deb', inst: 'Cotton University', imageUrl: 'https://cottonuniversity.ac.in/storage/uploads/profile/fa732e5488d21b5cbb771d2a1d38cba6.jpg', profileUrl: 'https://cottonuniversity.irins.org/profile/257522' },
+  { name: 'Dr. Rupjyoti Gogoi', inst: 'Tezpur University', imageUrl: 'https://www.tezu.ernet.in/dphy/home/img/Rupjyoti_new.jpg', profileUrl: 'https://www.tezu.ernet.in/dphy/home/profiles/rup_profile.php' },
+  { name: 'Dr. Biman Jyoti Medhi', inst: 'Gauhati University', imageUrl: 'https://i1.rgstatic.net/ii/profile.image/733312645595136-1551846767490_Q128/Biman-Medhi.jpg', profileUrl: 'https://www.researchgate.net/profile/Biman-Medhi' },
+  { name: 'Dr. Debasish Borah', inst: 'IIT Guwahati', imageUrl: 'https://lh3.googleusercontent.com/sitesv/AAzXCkcyddCrxUPyjWF8UhP4iGTxEvS3Yp9whYyrkPU3Yo7MuQ9-jRfAiJR5zar7QusEhOq_robN-_ONefUOgJ6uyUaG7XuJHaor8hfJpkLvhXCpsfZ_U5yOjtQjefwIcSBiqxRioT_dHeDGPnGQ9u2j1anTP0bryrcerwxfN3uNoCvZzLK_gyPD0zLIikqleFCv4VdnP37qQ32UqNgdLbrYw4bEq0CyVdyEg0Dz=w1280', profileUrl: 'https://sites.google.com/view/debasish-borah/home' },
 ];
 
 const programmeCoordinators = [
-  { name: 'Dr. Vivek Baruah Thapa', inst: 'Bhawanipur Anchalik College', imageUrl: 'https://robohash.org/vivek.png?set=set4&size=256x256', profileUrl: '#' },
-  { name: 'Dr. Debajyoti Dutta', inst: 'Bhattadev University', imageUrl: 'https://robohash.org/debajyoti.png?set=set4&size=256x256', profileUrl: '#' },
-  { name: 'Prof. Kanak Saha', inst: 'IUCAA', imageUrl: 'https://robohash.org/kanak.png?set=set4&size=256x256', profileUrl: '#' },
-];
-
-const organisingCommittee = [
-  { name: 'Dr. Placeholder Name 1', role: 'Convenor' },
-  { name: 'Ms. Placeholder Name 2', role: 'Member' },
-  { name: 'Mr. Placeholder Name 3', role: 'Member' },
-  { name: 'Dr. Placeholder Name 4', role: 'Member' },
-  { name: 'Prof. Placeholder Name 5', role: 'Advisor' },
-  { name: 'Dr. Placeholder Name 6', role: 'Member' },
-  { name: 'Ms. Placeholder Name 7', role: 'Member' },
-  { name: 'Mr. Placeholder Name 8', role: 'Member' },
+  { name: 'Dr. Vivek Baruah Thapa', inst: 'Bhawanipur Anchalik College', imageUrl: 'https://www.vivekbaruahthapa.com/img/self_img3.jpg', profileUrl: 'https://www.vivekbaruahthapa.com/' },
+  { name: 'Dr. Debajyoti Dutta', inst: 'Bhattadev University', imageUrl: 'https://lh3.googleusercontent.com/sitesv/AAzXCkcBi4H-3csYPlG28HsgTlicvTv2hqe1kS7djrIo771Hd9NDqFJSL8FqgcVZ4slVSwCPNPUl2A3R4_4pXyytTP5XD37ZoAbfz98kh7qHsQtk26f6IwOpsEFecbowPIdVsj1REY8fBT5ahL-ToptHejeBf51NC9vrR3hVCz2oegqCMBS5ejVleeMOS_Xfvn8Da_oPYerbSvbDJYTXGWqP6iwIU1jQJbBTTt2_tBk=w1280', profileUrl: 'https://sites.google.com/view/debajyotidutta/home?authuser=0' },
+  { name: 'Prof. Kanak Saha', inst: 'IUCAA', imageUrl: 'https://www.iucaa.in/images/Research_files/Faculty/Kanak_Saha.jpg', profileUrl: 'https://www.iucaa.in/en/faculty-research/kanak' },
 ];
 
 const organisers = [
     {
         name: 'Bhawanipur Anchalik College',
         description: 'Established in 1982 in Bhawanipur, Barpeta district of Assam, the college offers undergraduate programmes in Arts, Science, and Commerce. It has played a crucial role in promoting higher education, social awareness, and intellectual growth among the youth of lower Assam.',
-        imageUrl: 'https://www.bacollege.ac.in/wp-content/uploads/2023/11/logo-1.png',
-        websiteUrl: '#'
+        imageUrl: 'https://www.bacollege.ac.in/img/icon.png',
+        websiteUrl: 'https://www.bacollege.ac.in/'
     },
     {
         name: 'Bhattadev University',
         description: 'A state public university located in Pathsala (Bajali district), established under the Bhattadev University Act, 2017. Emerging from the historic Bajali College, it offers UG and PG programmes across Science, Arts, and Commerce, fostering knowledge and regional development.',
-        imageUrl: 'https://bhattadevuniversity.ac.in/wp-content/uploads/2020/07/cropped-bu-logo-1-1.png',
-        websiteUrl: '#'
+        imageUrl: 'https://www.bhattadevuniversity.ac.in/images/bd_icon.png',
+        websiteUrl: 'https://www.bhattadevuniversity.ac.in/index.jsp'
     },
     {
         name: 'IUCAA, Pune',
         description: 'The Inter‑University Centre for Astronomy and Astrophysics (IUCAA) is an autonomous institution set up by the UGC to promote excellence in research and teaching in astronomy and astrophysics. Established in 1988, it serves as a national hub for university researchers.',
-        imageUrl: 'https://www.iucaa.in/ws/logo.png',
-        websiteUrl: '#'
+        imageUrl: 'https://www.iucaa.in/images/IUCAA-logo-text.png',
+        websiteUrl: 'https://www.iucaa.in/en/'
     }
 ];
 
@@ -65,10 +53,14 @@ function renderDates() {
   return importantDates.map(item => `
     <li class="flex items-start gap-3">
       <span class="mt-1 h-2 w-2 rounded-full bg-rose-600"></span>
-      <div><span class="font-medium">${item.label}:</span> ${item.value}</div>
+      <div>
+        <span class="font-medium">${item.label}:</span> 
+        <strong>${item.value}</strong>
+      </div>
     </li>
   `).join('');
 }
+
 
 function renderUpdates() {
   return importantUpdates.map(update => `
@@ -118,15 +110,6 @@ function renderOrganisers() {
     `).join('');
 }
 
-function renderCommittee() {
-  return organisingCommittee.map(member => `
-      <div class="rounded-lg border bg-neutral-50 p-4 text-center">
-        <p class="font-medium text-neutral-800 text-sm">${member.name}</p>
-        <p class="text-xs text-neutral-600">${member.role}</p>
-      </div>
-    `).join('');
-}
-
 
 // --- Main Render Function (Equivalent to mounting the WorkshopLanding component) ---
 function renderWorkshopLanding() {
@@ -137,23 +120,15 @@ function renderWorkshopLanding() {
       <!-- Sticky Apply bar -->
       <div class="sticky top-0 z-50 backdrop-blur bg-white/70 border-b border-neutral-200">
         <div class="mx-auto max-w-6xl px-4 py-3 flex items-center gap-3">
-          <span class="text-sm font-semibold tracking-wide uppercase text-rose-700">IUCAA Sponsored Workshop</span>
+          <span class="text-sm font-semibold tracking-wide uppercase text-rose-700">A&A Workshop</span>
           <nav class="ml-auto hidden md:flex items-center gap-6 text-sm">
             <a href="#updates" class="hover:text-rose-700">Updates</a>
             <a href="#about" class="hover:text-rose-700">About</a>
             <a href="#speakers" class="hover:text-rose-700">Resource Persons</a>
             <a href="#eligibility" class="hover:text-rose-700">Eligibility</a>
             <a href="#orgs" class="hover:text-rose-700">Organisers</a>
-            <a href="#committee" class="hover:text-rose-700">Committee</a>
             <a href="#contact" class="hover:text-rose-700">Contact</a>
           </nav>
-          <a
-            href="${APPLY_URL}"
-            class="ml-auto md:ml-2 inline-flex items-center justify-center rounded-2xl bg-rose-600 px-4 py-2 text-white font-semibold shadow-sm hover:bg-rose-700 transition-colors"
-            target="_blank" rel="noreferrer"
-          >
-            Apply Now
-          </a>
         </div>
       </div>
 
@@ -170,7 +145,7 @@ function renderWorkshopLanding() {
                 16–17 February, 2026 • Bhattadev University, Assam
               </div>
               <h1 class="mt-4 text-3xl md:text-5xl font-extrabold tracking-tight">
-                Introductory Workshop on <span class="text-rose-700">Astronomy & Astrophysics</span>
+                Introductory Workshop<span class="text-rose-700 text-3xl md:text-[2.45rem] font-semibold"> on Astronomy & Astrophysics</span>
               </h1>
               <p class="mt-4 text-neutral-700 md:text-lg leading-relaxed text-justify">
                 An immersive 2-day, in-person workshop with engaging lectures, hands‑on demonstrations, interactive sessions, and night‑sky observation. Jointly organised by
@@ -221,25 +196,27 @@ function renderWorkshopLanding() {
             <p class="mt-4 text-neutral-700 leading-relaxed text-justify">
               The event also promotes early exposure to Astronomy and Astrophysics in consonance with the vision of <span class="font-medium">NEP 2020</span>, which emphasises equitable access to quality scientific education across all regions of the country.
             </p>
+            <p class="mt-4 text-neutral-700 leading-relaxed text-justify">
+              The workshop also aims to build a collaborative platform connecting students, educators, and researchers. Participants will gain valuable exposure to modern astrophysical methods, data analysis, and observational practices, fostering curiosity and scientific understanding of the cosmos.
           </div>
           <aside class="md:col-span-2">
             <div class="rounded-3xl border border-neutral-200 bg-white p-6 shadow-sm">
               <h3 class="text-lg font-semibold">Quick Facts</h3>
               <dl class="mt-4 grid grid-cols-1 gap-3 text-sm">
                 <div class="rounded-xl border bg-neutral-50 p-3">
-                  <dt class="font-medium">Mode</dt>
+                  <dt class="font-medium"><strong>Mode</strong></dt>
                   <dd>In-person, 2 days</dd>
                 </div>
                 <div class="rounded-xl border bg-neutral-50 p-3">
-                  <dt class="font-medium">Location</dt>
+                  <dt class="font-medium"><strong>Location</strong></dt>
                   <dd>Bhattadev University, Bajali (Pathsala), Assam</dd>
                 </div>
                 <div class="rounded-xl border bg-neutral-50 p-3">
-                  <dt class="font-medium">Seats</dt>
+                  <dt class="font-medium"><strong>Seats</strong></dt>
                   <dd>30 participants (capped)</dd>
                 </div>
                 <div class="rounded-xl border bg-neutral-50 p-3">
-                  <dt class="font-medium">Support</dt>
+                  <dt class="font-medium"><strong>Support</strong></dt>
                   <dd>Limited travel & accommodation for non‑local attendees (may be extended)</dd>
                 </div>
               </dl>
@@ -288,15 +265,6 @@ function renderWorkshopLanding() {
         </div>
       </section>
 
-      <!-- Organising Committee -->
-      <section id="committee" class="bg-white border-y border-neutral-200">
-        <div class="mx-auto max-w-6xl px-4 py-12 md:py-16">
-          <h2 class="text-2xl md:text-3xl font-bold">Organising Committee</h2>
-          <div class="mt-8 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
-            ${renderCommittee()}
-          </div>
-        </div>
-      </section>
 
       <!-- Callout -->
       <section class="mx-auto max-w-6xl px-4 py-12 md:py-16">
@@ -327,8 +295,7 @@ function renderWorkshopLanding() {
             </div>
             <div class="rounded-2xl border border-neutral-200 overflow-hidden">
                 <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3567.896791993922!2d91.1718193150381!3d26.587394983268875!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x375ba271a0d8c0b1%3A0x6d1b7a2d39999a87!2sBhattadev%20University!5e0!4m2!3m1!1s0x375ba271a0d8c0b1%3A0x6d1b7a2d39999a87!2sBhattadev%20University" 
-                    width="100%" 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3569.168003803616!2d91.18412452460846!3d26.505337190844845!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x375b9fa7c37ef2d3%3A0x0000000000000000!2sBhattadev%20University%2C%20Bajali%2C%20Pathsala%2C%20Assam!5e0!3m2!1sen!2sin!4v1731340000000!5m2!1sen!2sin"                    width="100%" 
                     height="100%" 
                     style="border:0" 
                     allowfullscreen="true"
@@ -344,14 +311,22 @@ function renderWorkshopLanding() {
       </section>
 
       <footer class="border-t border-neutral-200">
-        <div class="mx-auto max-w-6xl px-4 py-8 text-sm text-neutral-600 flex flex-col md:flex-row items-center gap-3 md:gap-6">
-          <p>© ${new Date().getFullYear()} Introductory Workshop on Astronomy & Astrophysics • IUCAA Sponsored</p>
-          <a href="#about" class="hover:text-rose-700">About</a>
-          <a href="#eligibility" class="hover:text-rose-700">Eligibility</a>
-          <a href="#committee" class="hover:text-rose-700">Committee</a>
-          <a href="${APPLY_URL}" target="_blank" rel="noreferrer" class="ml-auto inline-flex rounded-xl border border-rose-300 bg-rose-50 px-3 py-1 font-medium text-rose-700 hover:bg-rose-100 transition-colors">Apply</a>
+        <div class="mx-auto max-w-6xl px-4 py-8 text-sm text-neutral-600 text-center space-y-2">
+          <div class="flex flex-wrap justify-center items-center gap-4">
+            <p>© ${new Date().getFullYear()} A&A Workshop • IUCAA Sponsored</p>
+            <a href="#about" class="hover:text-rose-700">About</a>
+            <a href="#eligibility" class="hover:text-rose-700">Eligibility</a>
+          </div>
+          <p>
+            Webpage is designed by 
+            <a href="https://mrinmaymedhi.myportfolio.com/ target="_blank" rel="noreferrer" class="font-medium text-rose-700 hover:underline">
+              Mrinmay Medhi
+            </a> 
+            and hosted using <span class="font-medium">Netlify.app</span>.
+          </p>
         </div>
       </footer>
+
   `;
 }
 
