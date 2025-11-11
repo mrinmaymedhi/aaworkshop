@@ -120,7 +120,7 @@ function renderWorkshopLanding() {
       <!-- Sticky Apply bar -->
       <div class="sticky top-0 z-50 backdrop-blur bg-white/70 border-b border-neutral-200">
         <div class="mx-auto max-w-6xl px-4 py-3 flex items-center gap-3">
-          <span class="text-sm font-semibold tracking-wide uppercase text-rose-700">A&A Workshop</span>
+          <span class="text-sm font-semibold tracking-wide uppercase text-rose-700">A&A Workshop, 2026</span>
           <nav class="ml-auto hidden md:flex items-center gap-6 text-sm">
             <a href="#updates" class="hover:text-rose-700">Updates</a>
             <a href="#about" class="hover:text-rose-700">About</a>
@@ -361,6 +361,7 @@ document.addEventListener('DOMContentLoaded', () => {
     setupSmoothScroll();
 
 });
+
 
 
 
