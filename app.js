@@ -21,7 +21,7 @@ const resourcePersons = [
 ];
 
 const programmeCoordinators = [
-  { name: 'Dr. Vivek Baruah Thapa', inst: 'Bhawanipur Anchalik College', imageUrl: 'https://www.vivekbaruahthapa.com/img/self_img3.jpg', profileUrl: 'https://www.vivekbaruahthapa.com/' },
+  { name: 'Dr. Vivek Baruah Thapa', inst: 'Bhawanipur Anchalik College', imageUrl: 'https://bacollege.ac.in/faculty/7ceb96e97df6c25eaaed83818c51b399.png', profileUrl: 'https://www.vivekbaruahthapa.com/' },
   { name: 'Dr. Debajyoti Dutta', inst: 'Bhattadev University', imageUrl: 'https://lh3.googleusercontent.com/sitesv/AAzXCkcBi4H-3csYPlG28HsgTlicvTv2hqe1kS7djrIo771Hd9NDqFJSL8FqgcVZ4slVSwCPNPUl2A3R4_4pXyytTP5XD37ZoAbfz98kh7qHsQtk26f6IwOpsEFecbowPIdVsj1REY8fBT5ahL-ToptHejeBf51NC9vrR3hVCz2oegqCMBS5ejVleeMOS_Xfvn8Da_oPYerbSvbDJYTXGWqP6iwIU1jQJbBTTt2_tBk=w1280', profileUrl: 'https://sites.google.com/view/debajyotidutta/home?authuser=0' },
   { name: 'Prof. Kanak Saha', inst: 'IUCAA', imageUrl: 'https://www.iucaa.in/images/Research_files/Faculty/Kanak_Saha.jpg', profileUrl: 'https://www.iucaa.in/en/faculty-research/kanak' },
 ];
@@ -361,3 +361,4 @@ document.addEventListener('DOMContentLoaded', () => {
     setupSmoothScroll();
 
 });
+
