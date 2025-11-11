@@ -8,22 +8,22 @@ const importantDates = [
 ];
 
 const importantUpdates = [
-  { title: 'Application link is now live.', date: '11 Nov 2025', url: 'https://forms.gle/wK1D5u2v4zYUiwBb7', new: true },
-  { title: 'Download workshop poster.', date: '11 Nov 2025', url: 'AA_Workshop_Poster.pdf', new: true },
+  { title: 'Application link is now live.', date: '11 Nov 2025', url: '#', new: true },
+  { title: 'Download workshop poster.', date: '', url: 'AA_Workshop_Poster.pdf', new: true },
 ];
 
 const resourcePersons = [
   { name: 'Prof. Kanak Saha', inst: 'IUCAA', imageUrl: 'https://www.iucaa.in/images/Research_files/Faculty/Kanak_Saha.jpg', profileUrl: 'https://www.iucaa.in/en/faculty-research/kanak' },
-  { name: 'Dr. Sukanta Deb', inst: 'Cotton University', imageUrl: 'https://cottonuniversity.ac.in/storage/uploads/profile/fa732e5488d21b5cbb771d2a1d38cba6.jpg', profileUrl: 'https://cottonuniversity.irins.org/profile/257522' },
-  { name: 'Dr. Rupjyoti Gogoi', inst: 'Tezpur University', imageUrl: 'https://www.tezu.ernet.in/dphy/home/img/Rupjyoti_new.jpg', profileUrl: 'https://www.tezu.ernet.in/dphy/home/profiles/rup_profile.php' },
   { name: 'Dr. Biman Jyoti Medhi', inst: 'Gauhati University', imageUrl: 'https://i1.rgstatic.net/ii/profile.image/733312645595136-1551846767490_Q128/Biman-Medhi.jpg', profileUrl: 'https://www.researchgate.net/profile/Biman-Medhi' },
-  { name: 'Dr. Debasish Borah', inst: 'IIT Guwahati', imageUrl: '4512faculty_1080x1080.jpeg', profileUrl: 'https://sites.google.com/view/debasish-borah/home' },
+  { name: 'Dr. Debasish Borah', inst: 'IIT Guwahati', imageUrl: 'https://lh3.googleusercontent.com/sitesv/AAzXCkcyddCrxUPyjWF8UhP4iGTxEvS3Yp9whYyrkPU3Yo7MuQ9-jRfAiJR5zar7QusEhOq_robN-_ONefUOgJ6uyUaG7XuJHaor8hfJpkLvhXCpsfZ_U5yOjtQjefwIcSBiqxRioT_dHeDGPnGQ9u2j1anTP0bryrcerwxfN3uNoCvZzLK_gyPD0zLIikqleFCv4VdnP37qQ32UqNgdLbrYw4bEq0CyVdyEg0Dz=w1280', profileUrl: 'https://sites.google.com/view/debasish-borah/home' },
+  { name: 'Dr. Rupjyoti Gogoi', inst: 'Tezpur University', imageUrl: 'https://www.tezu.ernet.in/dphy/home/img/Rupjyoti_new.jpg', profileUrl: 'https://www.tezu.ernet.in/dphy/home/profiles/rup_profile.php' },
+  { name: 'Dr. Sukanta Deb', inst: 'Cotton University', imageUrl: 'https://cottonuniversity.ac.in/storage/uploads/profile/fa732e5488d21b5cbb771d2a1d38cba6.jpg', profileUrl: 'https://cottonuniversity.irins.org/profile/257522' },
 ];
 
 const programmeCoordinators = [
-  { name: 'Dr. Vivek Baruah Thapa', inst: 'Bhawanipur Anchalik College', imageUrl: 'https://bacollege.ac.in/faculty/7ceb96e97df6c25eaaed83818c51b399.png', profileUrl: 'https://www.vivekbaruahthapa.com/' },
-  { name: 'Dr. Debajyoti Dutta', inst: 'Bhattadev University', imageUrl: 'https://lh3.googleusercontent.com/sitesv/AAzXCkcBi4H-3csYPlG28HsgTlicvTv2hqe1kS7djrIo771Hd9NDqFJSL8FqgcVZ4slVSwCPNPUl2A3R4_4pXyytTP5XD37ZoAbfz98kh7qHsQtk26f6IwOpsEFecbowPIdVsj1REY8fBT5ahL-ToptHejeBf51NC9vrR3hVCz2oegqCMBS5ejVleeMOS_Xfvn8Da_oPYerbSvbDJYTXGWqP6iwIU1jQJbBTTt2_tBk=w1280', profileUrl: 'https://sites.google.com/view/debajyotidutta/home?authuser=0' },
   { name: 'Prof. Kanak Saha', inst: 'IUCAA', imageUrl: 'https://www.iucaa.in/images/Research_files/Faculty/Kanak_Saha.jpg', profileUrl: 'https://www.iucaa.in/en/faculty-research/kanak' },
+  { name: 'Dr. Debajyoti Dutta', inst: 'Bhattadev University', imageUrl: 'https://lh3.googleusercontent.com/sitesv/AAzXCkcBi4H-3csYPlG28HsgTlicvTv2hqe1kS7djrIo771Hd9NDqFJSL8FqgcVZ4slVSwCPNPUl2A3R4_4pXyytTP5XD37ZoAbfz98kh7qHsQtk26f6IwOpsEFecbowPIdVsj1REY8fBT5ahL-ToptHejeBf51NC9vrR3hVCz2oegqCMBS5ejVleeMOS_Xfvn8Da_oPYerbSvbDJYTXGWqP6iwIU1jQJbBTTt2_tBk=w1280', profileUrl: 'https://sites.google.com/view/debajyotidutta/home?authuser=0' },
+  { name: 'Dr. Vivek Baruah Thapa', inst: 'Bhawanipur Anchalik College', imageUrl: 'https://www.vivekbaruahthapa.com/img/self_img3.jpg', profileUrl: 'https://www.vivekbaruahthapa.com/' },
 ];
 
 const organisers = [
@@ -120,7 +120,7 @@ function renderWorkshopLanding() {
       <!-- Sticky Apply bar -->
       <div class="sticky top-0 z-50 backdrop-blur bg-white/70 border-b border-neutral-200">
         <div class="mx-auto max-w-6xl px-4 py-3 flex items-center gap-3">
-          <span class="text-sm font-semibold tracking-wide uppercase text-rose-700">A&A Workshop, 2026</span>
+          <span class="text-sm font-semibold tracking-wide uppercase text-rose-700">A&A Workshop</span>
           <nav class="ml-auto hidden md:flex items-center gap-6 text-sm">
             <a href="#updates" class="hover:text-rose-700">Updates</a>
             <a href="#about" class="hover:text-rose-700">About</a>
@@ -359,9 +359,4 @@ function setupSmoothScroll() {
 document.addEventListener('DOMContentLoaded', () => {
     renderWorkshopLanding();
     setupSmoothScroll();
-
 });
-
-
-
-
