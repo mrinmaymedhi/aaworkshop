@@ -9,7 +9,7 @@ const importantDates = [
 
 const importantUpdates = [
   { title: 'Application link is now live.', date: '11 Nov 2025', url: 'https://forms.gle/wK1D5u2v4zYUiwBb7', new: true },
-  { title: 'Download workshop poster.', date: '', url: 'AA_Workshop_Poster.pdf', new: true },
+  { title: 'Download workshop poster.', date: '11 Nov 2025', url: 'AA_Workshop_Poster.pdf', new: true },
 ];
 
 const resourcePersons = [
@@ -361,5 +361,6 @@ document.addEventListener('DOMContentLoaded', () => {
     setupSmoothScroll();
 
 });
+
 
 
