@@ -17,7 +17,7 @@ const resourcePersons = [
   { name: 'Dr. Sukanta Deb', inst: 'Cotton University', imageUrl: 'https://cottonuniversity.ac.in/storage/uploads/profile/fa732e5488d21b5cbb771d2a1d38cba6.jpg', profileUrl: 'https://cottonuniversity.irins.org/profile/257522' },
   { name: 'Dr. Rupjyoti Gogoi', inst: 'Tezpur University', imageUrl: 'https://www.tezu.ernet.in/dphy/home/img/Rupjyoti_new.jpg', profileUrl: 'https://www.tezu.ernet.in/dphy/home/profiles/rup_profile.php' },
   { name: 'Dr. Biman Jyoti Medhi', inst: 'Gauhati University', imageUrl: 'https://i1.rgstatic.net/ii/profile.image/733312645595136-1551846767490_Q128/Biman-Medhi.jpg', profileUrl: 'https://www.researchgate.net/profile/Biman-Medhi' },
-  { name: 'Dr. Debasish Borah', inst: 'IIT Guwahati', imageUrl: 'https://lh3.googleusercontent.com/sitesv/AAzXCkcyddCrxUPyjWF8UhP4iGTxEvS3Yp9whYyrkPU3Yo7MuQ9-jRfAiJR5zar7QusEhOq_robN-_ONefUOgJ6uyUaG7XuJHaor8hfJpkLvhXCpsfZ_U5yOjtQjefwIcSBiqxRioT_dHeDGPnGQ9u2j1anTP0bryrcerwxfN3uNoCvZzLK_gyPD0zLIikqleFCv4VdnP37qQ32UqNgdLbrYw4bEq0CyVdyEg0Dz=w1280', profileUrl: 'https://sites.google.com/view/debasish-borah/home' },
+  { name: 'Dr. Debasish Borah', inst: 'IIT Guwahati', imageUrl: '4512faculty_1080x1080.jpeg', profileUrl: 'https://sites.google.com/view/debasish-borah/home' },
 ];
 
 const programmeCoordinators = [
@@ -361,4 +361,5 @@ document.addEventListener('DOMContentLoaded', () => {
     setupSmoothScroll();
 
 });
+
 
