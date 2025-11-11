@@ -22,7 +22,7 @@ const resourcePersons = [
 
 const programmeCoordinators = [
   { name: 'Dr. Vivek Baruah Thapa', inst: 'Bhawanipur Anchalik College', imageUrl: 'https://bacollege.ac.in/faculty/7ceb96e97df6c25eaaed83818c51b399.png', profileUrl: 'https://www.vivekbaruahthapa.com/' },
-  { name: 'Dr. Debajyoti Dutta', inst: 'Bhattadev University', imageUrl: 'db.jpeg', profileUrl: 'https://sites.google.com/view/debajyotidutta/home?authuser=0' },
+  { name: 'Dr. Debajyoti Dutta', inst: 'Bhattadev University', imageUrl: 'db.jpg', profileUrl: 'https://sites.google.com/view/debajyotidutta/home?authuser=0' },
   { name: 'Prof. Kanak Saha', inst: 'IUCAA', imageUrl: 'https://www.iucaa.in/images/Research_files/Faculty/Kanak_Saha.jpg', profileUrl: 'https://www.iucaa.in/en/faculty-research/kanak' },
 ];
 
@@ -360,6 +360,7 @@ document.addEventListener('DOMContentLoaded', () => {
     renderWorkshopLanding();
     setupSmoothScroll();
 });
+
 
 
 
