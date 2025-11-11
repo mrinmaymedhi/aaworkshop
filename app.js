@@ -40,7 +40,7 @@ const organisers = [
         websiteUrl: 'https://www.bhattadevuniversity.ac.in/index.jsp'
     },
     {
-        name: 'IUCAA, Pune',
+        name: 'IUCAA',
         description: 'The Inter‑University Centre for Astronomy and Astrophysics (IUCAA) is an autonomous institution set up by the UGC to promote excellence in research and teaching in astronomy and astrophysics. Established in 1988, it serves as a national hub for university researchers.',
         imageUrl: 'https://www.iucaa.in/images/IUCAA-logo-text.png',
         websiteUrl: 'https://www.iucaa.in/en/'
@@ -360,6 +360,7 @@ document.addEventListener('DOMContentLoaded', () => {
     renderWorkshopLanding();
     setupSmoothScroll();
 });
+
 
 
 
