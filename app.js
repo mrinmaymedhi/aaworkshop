@@ -8,8 +8,9 @@ const importantDates = [
 ];
 
 const importantUpdates = [
-  { title: 'Application link is now live.', date: '11 Nov 2025', url: '#', new: true },
-  { title: 'Download workshop poster.', date: '11 Nov 2025', url: 'AA_Workshop_Poster.pdf', new: true },
+  { title: 'The list of selected participants will be announced soon.', date: '28 Dec 2025', url: '#', new: true },
+  { title: 'Application link is now live.', date: '11 Nov 2025', url: '#', new: false },
+  { title: 'Download workshop poster.', date: '11 Nov 2025', url: 'AA_Workshop_Poster.pdf', new: false },
 ];
 
 const resourcePersons = [
@@ -360,6 +361,7 @@ document.addEventListener('DOMContentLoaded', () => {
     renderWorkshopLanding();
     setupSmoothScroll();
 });
+
 
 
 
