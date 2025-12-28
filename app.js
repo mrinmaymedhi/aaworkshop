@@ -21,7 +21,7 @@ const resourcePersons = [
 ];
 
 const programmeCoordinators = [
-  { name: 'Dr. Vivek Baruah Thapa', inst: 'Bhawanipur Anchalik College', imageUrl: 'https://bacollege.ac.in/faculty/7ceb96e97df6c25eaaed83818c51b399.png', profileUrl: 'https://www.vivekbaruahthapa.com/' },
+  { name: 'Dr. Vivek Baruah Thapa', inst: 'Birangana Sati Sadhani Rajyik Vishwavidyalaya', imageUrl: 'https://bacollege.ac.in/faculty/7ceb96e97df6c25eaaed83818c51b399.png', profileUrl: 'https://www.vivekbaruahthapa.com/' },
   { name: 'Dr. Debajyoti Dutta', inst: 'Bhattadev University', imageUrl: 'db.jpg', profileUrl: 'https://sites.google.com/view/debajyotidutta/home?authuser=0' },
   { name: 'Prof. Kanak Saha', inst: 'IUCAA', imageUrl: 'https://www.iucaa.in/images/Research_files/Faculty/Kanak_Saha.jpg', profileUrl: 'https://www.iucaa.in/en/faculty-research/kanak' },
 ];
@@ -166,7 +166,7 @@ function renderWorkshopLanding() {
                     ${renderDates()}
                   </ul>
                   <a href="${APPLY_URL}" target="_blank" rel="noreferrer" class="mt-6 inline-flex w-full items-center justify-center rounded-xl border border-rose-200 bg-rose-50 px-4 py-2 font-semibold text-rose-700 hover:bg-rose-100 transition-colors">
-                    Click Here to Apply
+                    Application is Over
                   </a>
                 </div>
               </div>
@@ -271,7 +271,7 @@ function renderWorkshopLanding() {
         <div class="rounded-3xl border border-rose-200 bg-rose-50 p-6 md:p-10">
           <h3 class="text-xl md:text-2xl font-bold text-rose-800">Ready to explore the cosmos?</h3>
           <p class="mt-3 text-neutral-800 md:text-lg">Applications are open now. Seats are limited to 30 participants.</p>
-          <a href="${APPLY_URL}" target="_blank" rel="noreferrer" class="mt-6 inline-flex rounded-2xl bg-rose-600 px-5 py-3 text-white font-semibold hover:bg-rose-700 shadow transition-colors">Apply via Google Form</a>
+          <a href="${APPLY_URL}" target="_blank" rel="noreferrer" class="mt-6 inline-flex rounded-2xl bg-rose-600 px-5 py-3 text-white font-semibold hover:bg-rose-700 shadow transition-colors">Application is Over</a>
         </div>
       </section>
 
@@ -360,6 +360,7 @@ document.addEventListener('DOMContentLoaded', () => {
     renderWorkshopLanding();
     setupSmoothScroll();
 });
+
 
 
 
