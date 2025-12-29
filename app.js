@@ -3,7 +3,7 @@ const APPLY_URL = "https://forms.gle/wK1D5u2v4zYUiwBb7";
 
 const importantDates = [
   { label: 'Last Date of Application', value: '20 December, 2025' },
-  { label: 'Publication of Selected Participants', value: '10 January, 2026' },
+  { label: 'Email to Selected Participants by', value: '10 January, 2026' },
   { label: 'Workshop Dates', value: '16–17 February, 2026' },
 ];
 
