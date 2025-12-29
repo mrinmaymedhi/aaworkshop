@@ -8,7 +8,7 @@ const importantDates = [
 ];
 
 const importantUpdates = [
-  { title: 'The list of selected participants will be announced soon.', date: '28 Dec 2025', url: '#', new: true },
+  { title: 'Selected participants will be notified via email by 10 January, 2026.', date: '28 Dec 2025', url: '#', new: true },
   { title: 'Application link is now live.', date: '11 Nov 2025', url: '#', new: false },
   { title: 'Download workshop poster.', date: '11 Nov 2025', url: 'AA_Workshop_Poster.pdf', new: false },
 ];
