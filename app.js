@@ -715,6 +715,7 @@ setupMobileMenu();
 
 
 
+
 // Initialize the application once the DOM is fully loaded
 document.addEventListener('DOMContentLoaded', () => {
   renderWorkshopLanding();
@@ -728,6 +729,7 @@ document.addEventListener('DOMContentLoaded', () => {
   startCTACountdown(workshopStart);
   renderUpdatesTicker(); // 🔔 NEW
 });
+
 
 
 
