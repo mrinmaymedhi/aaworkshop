@@ -147,13 +147,16 @@ function renderWorkshopLanding() {
 
   <!-- Header Bar -->
   <div class="backdrop-blur bg-white/80 border-b border-neutral-200">
-    <div class="mx-auto max-w-6xl px-4 py-3">
+    <div class="mx-auto max-w-6xl px-4 py-2">
 
       <!-- Row 1 -->
       <div class="flex items-center gap-3">
 
         <!-- Title -->
-        <span class="text-sm font-semibold tracking-wide uppercase text-rose-700">
+<span
+  class="text-xl font-semibold tracking-wide uppercase text-rose-700
+         leading-none block"
+>
           A&A Workshop
         </span>
 
@@ -166,7 +169,7 @@ function renderWorkshopLanding() {
           <a href="#orgs" class="hover:text-rose-700">Organisers</a>
           <a href="#contact" class="hover:text-rose-700">Contact</a>
         </nav>
-
+        
         <!-- Mobile Hamburger -->
         <button
           id="mobileMenuBtn"
@@ -188,7 +191,11 @@ function renderWorkshopLanding() {
       </div>
 
       <!-- Row 2: Countdown -->
-      <div class="mt-0 leading-tight text-xs text-neutral-700 flex items-center gap-2">
+<div
+  class="mt-0 text-xs text-neutral-700
+         flex items-center gap-2
+         leading-none"
+>
         <span class="font-medium">Workshop starts in</span>
         <span
           id="countdownStrip"
@@ -204,7 +211,7 @@ function renderWorkshopLanding() {
   <!-- Mobile Menu (ANCHOR TO BUTTON, SLIDE DOWN/UP) -->
   <div
     id="mobileMenu"
-    class="absolute right-4 top-[3.8rem]
+    class="absolute right-0 top-full mt-2
            md:hidden
            w-72
            rounded-2xl
