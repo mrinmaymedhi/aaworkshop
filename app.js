@@ -149,7 +149,7 @@ function renderWorkshopLanding() {
   <div class="backdrop-blur bg-white/80 border-b border-neutral-200">
     <div class="mx-auto max-w-6xl px-4 py-3">
 
-      <!-- Row 1: Title + Nav + Hamburger -->
+      <!-- Row 1 -->
       <div class="flex items-center gap-3">
 
         <!-- Title -->
@@ -157,7 +157,7 @@ function renderWorkshopLanding() {
           A&A Workshop
         </span>
 
-        <!-- Desktop Navigation -->
+        <!-- Desktop Nav -->
         <nav class="ml-auto hidden md:flex items-center gap-6 text-sm">
           <a href="#updates" class="hover:text-rose-700">Updates</a>
           <a href="#about" class="hover:text-rose-700">About</a>
@@ -185,9 +185,9 @@ function renderWorkshopLanding() {
           <span id="hamburgerIcon" class="text-xl leading-none">☰</span>
         </button>
 
-      </div> <!-- ✅ END Row-1 flex -->
+      </div>
 
-      <!-- Row 2: Countdown strip (NOW CORRECT POSITION) -->
+      <!-- Row 2: Countdown -->
       <div class="mt-1 text-xs text-neutral-700 flex items-center gap-2">
         <span class="font-medium">Workshop starts in</span>
         <span
@@ -201,18 +201,21 @@ function renderWorkshopLanding() {
     </div>
   </div>
 
-  <!-- Mobile Menu (floating card BELOW header, works now) -->
+  <!-- Mobile Menu (ANCHOR TO BUTTON, SLIDE DOWN/UP) -->
   <div
     id="mobileMenu"
-    class="absolute left-1/2 -translate-x-1/2 top-full mt-3
+    class="absolute right-4 top-[3.8rem]
            md:hidden
-           w-[92%] max-w-sm
+           w-64
            rounded-2xl
            bg-white/95 backdrop-blur
            border border-neutral-200
            shadow-xl
            overflow-hidden
-           max-h-0 opacity-0
+           opacity-0
+           scale-95
+           -translate-y-4
+           pointer-events-none
            transition-all duration-300 ease-in-out"
   >
     <nav class="px-6 py-5 space-y-4 text-sm">
@@ -226,6 +229,7 @@ function renderWorkshopLanding() {
   </div>
 
 </div>
+
 
 
 
