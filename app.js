@@ -175,7 +175,7 @@ function renderWorkshopLanding() {
           id="mobileMenuBtn"
           class="ml-auto md:hidden
                  inline-flex items-center justify-center
-                 h-11 w-11 rounded-full
+                 h-10 w-10 rounded-full
                  bg-white/90 backdrop-blur
                  border border-neutral-300
                  shadow-md
@@ -693,6 +693,7 @@ document.addEventListener('DOMContentLoaded', () => {
   startCTACountdown(workshopStart);
   renderUpdatesTicker(); // 🔔 NEW
 });
+
 
 
 
