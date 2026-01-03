@@ -481,8 +481,6 @@ function renderWorkshopLanding() {
         <div class="mx-auto max-w-6xl px-4 py-8 text-sm text-neutral-600 text-center space-y-2">
           <div class="flex flex-wrap justify-center items-center gap-4">
             <p>© ${new Date().getFullYear()} A&A Workshop • IUCAA Sponsored</p>
-            <a href="#about" class="hover:text-rose-700">About</a>
-            <a href="#eligibility" class="hover:text-rose-700">Eligibility</a>
           </div>
           <p>
             Webpage is designed by 
