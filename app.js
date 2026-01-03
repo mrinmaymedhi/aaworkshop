@@ -171,21 +171,26 @@ function renderWorkshopLanding() {
         </nav>
         
         <!-- Mobile Hamburger -->
-        <button
-          id="mobileMenuBtn"
-          class="ml-auto md:hidden
-                 inline-flex items-center justify-center
-                 h-15 w-15
-                 bg-white/90 backdrop-blur
-                 shadow-none
-                 text-neutral-700
-                 transition-all duration-200
-                 hover:shadow-none hover:bg-white
-                 active:scale-95"
-          aria-label="Open menu"
-        >
-          <span id="hamburgerIcon" class="text-xl leading-none">☰</span>
-        </button>
+<button
+  id="mobileMenuBtn"
+  class="ml-auto md:hidden
+         inline-flex items-center justify-center
+         bg-transparent
+         border-none
+         shadow-none
+         transition-all duration-300
+         active:scale-95"
+  aria-label="Toggle menu"
+  aria-expanded="false"
+>
+  <img
+    id="menuIcon"
+    src="open.png"
+    alt="Open menu"
+    class="h-8 w-8 object-contain"
+  />
+</button>
+
 
       </div>
 
@@ -222,7 +227,7 @@ function renderWorkshopLanding() {
            opacity-0
            scale-95
            -translate-y-4
-           transition-all duration-300 ease-in-out"
+           transition-all duration-900 ease-in-out"
   >
     <nav class="px-6 py-5 space-y-4 text-sm">
       <a href="#updates" class="block font-medium hover:text-rose-700">Updates</a>
@@ -647,33 +652,62 @@ function renderUpdatesTicker() {
 function setupMobileMenu() {
   const btn = document.getElementById("mobileMenuBtn");
   const menu = document.getElementById("mobileMenu");
-  const icon = document.getElementById("hamburgerIcon");
+  const icon = document.getElementById("menuIcon");
 
   if (!btn || !menu || !icon) return;
 
-  btn.addEventListener("click", () => {
-    const open = menu.classList.contains("max-h-96");
+  let isOpen = false;
 
-    if (open) {
-      menu.classList.remove("max-h-96", "opacity-100");
-      menu.classList.add("max-h-0", "opacity-0");
-      icon.textContent = "☰";
+  btn.addEventListener("click", () => {
+    isOpen = !isOpen;
+
+    if (isOpen) {
+      // show menu
+      menu.classList.add(
+        "opacity-100",
+        "scale-100",
+        "translate-y-0",
+        "pointer-events-auto"
+      );
+
+      // change icon
+      icon.src = "close.png";
+      btn.setAttribute("aria-expanded", "true");
     } else {
-      menu.classList.remove("max-h-0", "opacity-0");
-      menu.classList.add("max-h-96", "opacity-100");
-      icon.textContent = "✕";
+      // hide menu
+      menu.classList.remove(
+        "opacity-100",
+        "scale-100",
+        "translate-y-0",
+        "pointer-events-auto"
+      );
+
+      // change icon
+      icon.src = "open.png";
+      btn.setAttribute("aria-expanded", "false");
     }
   });
 
-  // Close menu on link click
+  // Close menu when clicking a link
   menu.addEventListener("click", (e) => {
     if (e.target.tagName === "A") {
-      menu.classList.remove("max-h-96", "opacity-100");
-      menu.classList.add("max-h-0", "opacity-0");
-      icon.textContent = "☰";
+      isOpen = false;
+
+      menu.classList.remove(
+        "opacity-100",
+        "scale-100",
+        "translate-y-0",
+        "pointer-events-auto"
+      );
+
+      icon.src = "open.png";
+      btn.setAttribute("aria-expanded", "false");
     }
   });
 }
+
+setupMobileMenu();
+
 
 
 
@@ -692,9 +726,6 @@ document.addEventListener('DOMContentLoaded', () => {
   startCTACountdown(workshopStart);
   renderUpdatesTicker(); // 🔔 NEW
 });
-
-
-
 
 
 
