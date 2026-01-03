@@ -188,7 +188,7 @@ function renderWorkshopLanding() {
       </div>
 
       <!-- Row 2: Countdown -->
-      <div class="mt-1 text-xs text-neutral-700 flex items-center gap-2">
+      <div class="mt-0 leading-tight text-xs text-neutral-700 flex items-center gap-2">
         <span class="font-medium">Workshop starts in</span>
         <span
           id="countdownStrip"
@@ -206,16 +206,16 @@ function renderWorkshopLanding() {
     id="mobileMenu"
     class="absolute right-4 top-[3.8rem]
            md:hidden
-           w-64
+           w-72
            rounded-2xl
-           bg-white/95 backdrop-blur
-           border border-neutral-200
-           shadow-xl
+           bg-white/65 backdrop-blur-md
+           border border-neutral-200/70
+           shadow-2xl
+           bg-rose-50/80
            overflow-hidden
            opacity-0
            scale-95
            -translate-y-4
-           pointer-events-none
            transition-all duration-300 ease-in-out"
   >
     <nav class="px-6 py-5 space-y-4 text-sm">
