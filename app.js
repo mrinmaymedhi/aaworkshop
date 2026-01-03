@@ -685,19 +685,37 @@ function setupMobileMenu() {
     btn.setAttribute("aria-expanded", "false");
   }
 
-  btn.addEventListener("click", () => {
+  // Toggle on hamburger click
+  btn.addEventListener("click", (e) => {
+    e.stopPropagation(); // ⛔ prevent document click
     isOpen ? closeMenu() : openMenu();
   });
 
-  // Close menu when clicking a link
+  // Close when clicking menu links
   menu.addEventListener("click", (e) => {
+    e.stopPropagation(); // ⛔ prevent document click
     if (e.target.tagName === "A") {
+      closeMenu();
+    }
+  });
+
+  // ✅ CLOSE WHEN CLICKING / TOUCHING OUTSIDE
+  document.addEventListener("click", () => {
+    if (isOpen) {
+      closeMenu();
+    }
+  });
+
+  // ✅ MOBILE TOUCH SUPPORT (important)
+  document.addEventListener("touchstart", () => {
+    if (isOpen) {
       closeMenu();
     }
   });
 }
 
 setupMobileMenu();
+
 
 
 
@@ -718,6 +736,7 @@ document.addEventListener('DOMContentLoaded', () => {
   startCTACountdown(workshopStart);
   renderUpdatesTicker(); // 🔔 NEW
 });
+
 
 
 
