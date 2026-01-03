@@ -231,6 +231,12 @@ function renderWorkshopLanding() {
            transition-all duration-900 ease-in-out"
   >
     <nav class="px-6 py-5 space-y-4 text-sm">
+      <a
+    href="https://aaworkshop.netlify.app/"
+    class="block font-medium hover:text-rose-700"
+  >
+    Home
+  </a>
       <a href="#updates" class="block font-medium hover:text-rose-700">Updates</a>
       <a href="#about" class="block font-medium hover:text-rose-700">About</a>
       <a href="#speakers" class="block font-medium hover:text-rose-700">Resource Persons</a>
@@ -728,6 +734,7 @@ document.addEventListener('DOMContentLoaded', () => {
   startCTACountdown(workshopStart);
   renderUpdatesTicker(); // 🔔 NEW
 });
+
 
 
 
