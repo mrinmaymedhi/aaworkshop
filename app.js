@@ -226,6 +226,7 @@ function renderWorkshopLanding() {
            overflow-hidden
            opacity-0
            scale-95
+           pointer-events-none
            -translate-y-4
            transition-all duration-900 ease-in-out"
   >
@@ -658,55 +659,46 @@ function setupMobileMenu() {
 
   let isOpen = false;
 
+  function openMenu() {
+    isOpen = true;
+    menu.classList.add(
+      "opacity-100",
+      "scale-100",
+      "translate-y-0",
+      "pointer-events-auto"
+    );
+    menu.classList.remove("pointer-events-none");
+    icon.src = "close.png";
+    btn.setAttribute("aria-expanded", "true");
+  }
+
+  function closeMenu() {
+    isOpen = false;
+    menu.classList.remove(
+      "opacity-100",
+      "scale-100",
+      "translate-y-0",
+      "pointer-events-auto"
+    );
+    menu.classList.add("pointer-events-none");
+    icon.src = "open.png";
+    btn.setAttribute("aria-expanded", "false");
+  }
+
   btn.addEventListener("click", () => {
-    isOpen = !isOpen;
-
-    if (isOpen) {
-      // show menu
-      menu.classList.add(
-        "opacity-100",
-        "scale-100",
-        "translate-y-0",
-        "pointer-events-auto"
-      );
-
-      // change icon
-      icon.src = "close.png";
-      btn.setAttribute("aria-expanded", "true");
-    } else {
-      // hide menu
-      menu.classList.remove(
-        "opacity-100",
-        "scale-100",
-        "translate-y-0",
-        "pointer-events-auto"
-      );
-
-      // change icon
-      icon.src = "open.png";
-      btn.setAttribute("aria-expanded", "false");
-    }
+    isOpen ? closeMenu() : openMenu();
   });
 
   // Close menu when clicking a link
   menu.addEventListener("click", (e) => {
     if (e.target.tagName === "A") {
-      isOpen = false;
-
-      menu.classList.remove(
-        "opacity-100",
-        "scale-100",
-        "translate-y-0",
-        "pointer-events-auto"
-      );
-
-      icon.src = "open.png";
-      btn.setAttribute("aria-expanded", "false");
+      closeMenu();
     }
   });
 }
 
 setupMobileMenu();
+
 
 
 
@@ -726,6 +718,7 @@ document.addEventListener('DOMContentLoaded', () => {
   startCTACountdown(workshopStart);
   renderUpdatesTicker(); // 🔔 NEW
 });
+
 
 
 
