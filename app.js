@@ -691,26 +691,34 @@ function setupMobileMenu() {
     btn.setAttribute("aria-expanded", "false");
   }
 
-  // Toggle button
+  // Toggle menu on hamburger click
   btn.addEventListener("click", (e) => {
     e.stopPropagation();
     isOpen ? closeMenu() : openMenu();
   });
 
-  // ✅ ONE unified outside-click handler (desktop + mobile)
+  // ✅ CLOSE MENU WHEN ANY MENU ITEM IS CLICKED
+  menu.addEventListener("click", (e) => {
+    if (e.target.tagName === "A") {
+      closeMenu();
+    }
+  });
+
+  // ✅ CLOSE MENU WHEN CLICKING / TOUCHING OUTSIDE
   document.addEventListener("pointerdown", (e) => {
     if (!isOpen) return;
 
-    const clickedInsideMenu =
+    const clickedInside =
       menu.contains(e.target) || btn.contains(e.target);
 
-    if (!clickedInsideMenu) {
+    if (!clickedInside) {
       closeMenu();
     }
   });
 }
 
 setupMobileMenu();
+
 
 
 
@@ -734,6 +742,7 @@ document.addEventListener('DOMContentLoaded', () => {
   startCTACountdown(workshopStart);
   renderUpdatesTicker(); // 🔔 NEW
 });
+
 
 
 
