@@ -143,13 +143,13 @@ function renderWorkshopLanding() {
 
   root.innerHTML = `
 <!-- Sticky Header -->
-<div class="sticky top-0 z-50">
+<div class="sticky top-0 z-50 relative">
 
   <!-- Header Bar -->
-  <div class="relative backdrop-blur bg-white/80 border-b border-neutral-200">
+  <div class="backdrop-blur bg-white/80 border-b border-neutral-200">
     <div class="mx-auto max-w-6xl px-4 py-3">
 
-      <!-- Row 1: Title + Nav / Hamburger -->
+      <!-- Row 1: Title + Nav + Hamburger -->
       <div class="flex items-center gap-3">
 
         <!-- Title -->
@@ -170,15 +170,24 @@ function renderWorkshopLanding() {
         <!-- Mobile Hamburger -->
         <button
           id="mobileMenuBtn"
-          class="ml-auto md:hidden inline-flex items-center justify-center rounded-lg border border-neutral-300 p-2"
+          class="ml-auto md:hidden
+                 inline-flex items-center justify-center
+                 h-11 w-11 rounded-full
+                 bg-white/90 backdrop-blur
+                 border border-neutral-300
+                 shadow-md
+                 text-neutral-700
+                 transition-all duration-200
+                 hover:shadow-lg hover:bg-white
+                 active:scale-95"
           aria-label="Open menu"
         >
-          ☰
+          <span id="hamburgerIcon" class="text-xl leading-none">☰</span>
         </button>
 
-      </div>
+      </div> <!-- ✅ END Row-1 flex -->
 
-      <!-- Row 2: Countdown strip (ALWAYS below title) -->
+      <!-- Row 2: Countdown strip (NOW CORRECT POSITION) -->
       <div class="mt-1 text-xs text-neutral-700 flex items-center gap-2">
         <span class="font-medium">Workshop starts in</span>
         <span
@@ -192,26 +201,33 @@ function renderWorkshopLanding() {
     </div>
   </div>
 
-  <!-- Mobile Menu (slides DOWN below header, does NOT push header) -->
+  <!-- Mobile Menu (floating card BELOW header, works now) -->
   <div
     id="mobileMenu"
-    class="absolute left-0 right-0 top-full
-           md:hidden bg-white border-b border-neutral-200
+    class="absolute left-1/2 -translate-x-1/2 top-full mt-3
+           md:hidden
+           w-[92%] max-w-sm
+           rounded-2xl
+           bg-white/95 backdrop-blur
+           border border-neutral-200
+           shadow-xl
            overflow-hidden
            max-h-0 opacity-0
            transition-all duration-300 ease-in-out"
   >
-    <nav class="mx-auto max-w-6xl px-4 py-4 space-y-3 text-sm">
-      <a href="#updates" class="block hover:text-rose-700">Updates</a>
-      <a href="#about" class="block hover:text-rose-700">About</a>
-      <a href="#speakers" class="block hover:text-rose-700">Resource Persons</a>
-      <a href="#eligibility" class="block hover:text-rose-700">Eligibility</a>
-      <a href="#orgs" class="block hover:text-rose-700">Organisers</a>
-      <a href="#contact" class="block hover:text-rose-700">Contact</a>
+    <nav class="px-6 py-5 space-y-4 text-sm">
+      <a href="#updates" class="block font-medium hover:text-rose-700">Updates</a>
+      <a href="#about" class="block font-medium hover:text-rose-700">About</a>
+      <a href="#speakers" class="block font-medium hover:text-rose-700">Resource Persons</a>
+      <a href="#eligibility" class="block font-medium hover:text-rose-700">Eligibility</a>
+      <a href="#orgs" class="block font-medium hover:text-rose-700">Organisers</a>
+      <a href="#contact" class="block font-medium hover:text-rose-700">Contact</a>
     </nav>
   </div>
 
 </div>
+
+
 
 
 
@@ -621,8 +637,9 @@ function renderUpdatesTicker() {
 function setupMobileMenu() {
   const btn = document.getElementById("mobileMenuBtn");
   const menu = document.getElementById("mobileMenu");
+  const icon = document.getElementById("hamburgerIcon");
 
-  if (!btn || !menu) return;
+  if (!btn || !menu || !icon) return;
 
   btn.addEventListener("click", () => {
     const open = menu.classList.contains("max-h-96");
@@ -630,23 +647,24 @@ function setupMobileMenu() {
     if (open) {
       menu.classList.remove("max-h-96", "opacity-100");
       menu.classList.add("max-h-0", "opacity-0");
-      btn.textContent = "☰";
+      icon.textContent = "☰";
     } else {
       menu.classList.remove("max-h-0", "opacity-0");
       menu.classList.add("max-h-96", "opacity-100");
-      btn.textContent = "✕";
+      icon.textContent = "✕";
     }
   });
 
-  // Close on link click
+  // Close menu on link click
   menu.addEventListener("click", (e) => {
     if (e.target.tagName === "A") {
       menu.classList.remove("max-h-96", "opacity-100");
       menu.classList.add("max-h-0", "opacity-0");
-      btn.textContent = "☰";
+      icon.textContent = "☰";
     }
   });
 }
+
 
 
 
