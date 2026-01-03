@@ -119,17 +119,39 @@ function renderWorkshopLanding() {
 
   root.innerHTML = `
       <!-- Sticky Apply bar -->
-      <div class="sticky top-0 z-50 backdrop-blur bg-white/70 border-b border-neutral-200">
-        <div class="mx-auto max-w-6xl px-4 py-3 flex items-center gap-3">
-          <span class="text-sm font-semibold tracking-wide uppercase text-rose-700">A&A Workshop</span>
-          <nav class="ml-auto hidden md:flex items-center gap-6 text-sm">
-            <a href="#updates" class="hover:text-rose-700">Updates</a>
-            <a href="#about" class="hover:text-rose-700">About</a>
-            <a href="#speakers" class="hover:text-rose-700">Resource Persons</a>
-            <a href="#eligibility" class="hover:text-rose-700">Eligibility</a>
-            <a href="#orgs" class="hover:text-rose-700">Organisers</a>
-            <a href="#contact" class="hover:text-rose-700">Contact</a>
-          </nav>
+      <!-- Sticky Apply bar -->
+<div class="sticky top-0 z-50 backdrop-blur bg-white/80 border-b border-neutral-200">
+  <div class="mx-auto max-w-6xl px-4 py-3">
+    
+    <!-- Top row -->
+    <div class="flex items-center gap-3">
+      <span class="text-sm font-semibold tracking-wide uppercase text-rose-700">
+        A&A Workshop
+      </span>
+
+      <nav class="ml-auto hidden md:flex items-center gap-6 text-sm">
+        <a href="#updates" class="hover:text-rose-700">Updates</a>
+        <a href="#about" class="hover:text-rose-700">About</a>
+        <a href="#speakers" class="hover:text-rose-700">Resource Persons</a>
+        <a href="#eligibility" class="hover:text-rose-700">Eligibility</a>
+        <a href="#orgs" class="hover:text-rose-700">Organisers</a>
+        <a href="#contact" class="hover:text-rose-700">Contact</a>
+      </nav>
+    </div>
+
+    <!-- Countdown strip -->
+    <div class="mt-1 text-xs text-neutral-700 flex items-center gap-2">
+      <span class="font-medium">Workshop starts in</span>
+      <span
+        id="countdownStrip"
+        class="font-mono font-semibold text-rose-700 tracking-wider"
+      >
+        --:--:--:--
+      </span>
+    </div>
+
+  </div>
+</div>
         </div>
       </div>
 
@@ -356,11 +378,49 @@ function setupSmoothScroll() {
 }
 
 
+//-- Countdown
+function startHeaderCountdown(targetDate) {
+  const el = document.getElementById("countdownStrip");
+
+  function pad(n) {
+    return String(n).padStart(2, "0");
+  }
+
+  function update() {
+    const now = Date.now();
+    const diff = targetDate - now;
+
+    if (diff <= 0) {
+      el.textContent = "Live now";
+      return;
+    }
+
+    const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const h = Math.floor((diff / (1000 * 60 * 60)) % 24);
+    const m = Math.floor((diff / (1000 * 60)) % 60);
+    const s = Math.floor((diff / 1000) % 60);
+
+    el.textContent =
+      `${pad(d)}D:${pad(h)}H:${pad(m)}m:${pad(s)}s`;
+  }
+
+  update();
+  setInterval(update, 1000);
+}
+
+
 // Initialize the application once the DOM is fully loaded
 document.addEventListener('DOMContentLoaded', () => {
-    renderWorkshopLanding();
-    setupSmoothScroll();
+  renderWorkshopLanding();
+  setupSmoothScroll();
+
+  const workshopStart =
+    new Date("February 16, 2026 09:00:00").getTime();
+
+  startHeaderCountdown(workshopStart);
 });
+
+
 
 
 
