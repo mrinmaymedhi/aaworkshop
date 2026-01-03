@@ -2,10 +2,23 @@
 const APPLY_URL = "https://forms.gle/wK1D5u2v4zYUiwBb7";
 
 const importantDates = [
-  { label: 'Last Date of Application', value: '20 December, 2025' },
-  { label: 'Email to Selected Participants', value: '10 January, 2026' },
-  { label: 'Workshop Dates', value: '16–17 February, 2026' },
+  {
+    label: 'Last Date of Application',
+    value: '20 December, 2025',
+    past: true
+  },
+  {
+    label: 'Email to Selected Participants',
+    value: '10 January, 2026',
+    past: false
+  },
+  {
+    label: 'Workshop Dates',
+    value: '16–17 February, 2026',
+    past: false
+  },
 ];
+
 
 const importantUpdates = [
   { title: 'Selected participants will be notified via email by 10 January, 2026.', date: '28 Dec 2025', url: '#', new: true },
@@ -51,16 +64,27 @@ const organisers = [
 // --- Helper Functions to Render Dynamic Content via Template Literals ---
 
 function renderDates() {
-  return importantDates.map(item => `
-    <li class="flex items-start gap-3">
-      <span class="mt-1 h-2 w-2 rounded-full bg-rose-600"></span>
-      <div>
-        <span class="font-medium">${item.label}:</span> 
-        <strong>${item.value}</strong>
-      </div>
-    </li>
-  `).join('');
+  return importantDates.map(item => {
+    const pastClass = item.past
+      ? "line-through text-neutral-400"
+      : "";
+
+    return `
+      <li class="flex items-start gap-3">
+        <span class="mt-1 h-2 w-2 rounded-full bg-rose-600"></span>
+        <div>
+          <span class="font-medium ${pastClass}">
+            ${item.label}:
+          </span>
+          <strong class="${pastClass}">
+            ${item.value}
+          </strong>
+        </div>
+      </li>
+    `;
+  }).join('');
 }
+
 
 
 function renderUpdates() {
@@ -119,7 +143,6 @@ function renderWorkshopLanding() {
 
   root.innerHTML = `
       <!-- Sticky Apply bar -->
-      <!-- Sticky Apply bar -->
 <div class="sticky top-0 z-50 backdrop-blur bg-white/80 border-b border-neutral-200">
   <div class="mx-auto max-w-6xl px-4 py-3">
     
@@ -152,8 +175,29 @@ function renderWorkshopLanding() {
 
   </div>
 </div>
+
         </div>
       </div>
+
+
+<!-- Recent Updates Ticker -->
+<div
+  id="updatesTicker"
+  class="hidden border-b border-rose-200 bg-rose-50 overflow-hidden"
+>
+  <div class="mx-auto max-w-6xl px-4">
+    <div
+      id="updatesTickerContent"
+      class="whitespace-nowrap py-2 text-sm text-rose-800 font-medium cursor-pointer"
+    >
+      <!-- injected by JS -->
+    </div>
+  </div>
+</div>
+
+
+
+
 
       <!-- Hero -->
       <header class="relative isolate overflow-hidden">
@@ -290,13 +334,36 @@ function renderWorkshopLanding() {
 
 
       <!-- Callout -->
-      <section class="mx-auto max-w-6xl px-4 py-12 md:py-16">
-        <div class="rounded-3xl border border-rose-200 bg-rose-50 p-6 md:p-10">
-          <h3 class="text-xl md:text-2xl font-bold text-rose-800">Ready to explore the cosmos?</h3>
-          <p class="mt-3 text-neutral-800 md:text-lg">Applications are open now. Seats are limited to 30 participants.</p>
-          <a href="${APPLY_URL}" target="_blank" rel="noreferrer" class="mt-6 inline-flex rounded-2xl bg-rose-600 px-5 py-3 text-white font-semibold hover:bg-rose-700 shadow transition-colors">Application is Over</a>
-        </div>
-      </section>
+<section class="mx-auto max-w-6xl px-4 py-12 md:py-16">
+  <div class="rounded-3xl border border-rose-200 bg-rose-50 p-6 md:p-10">
+    
+    <h3 class="text-xl md:text-2xl font-bold text-rose-800">
+      Ready to explore the cosmos?
+    </h3>
+
+    <p
+      id="ctaCountdownHeading"
+      class="mt-3 text-neutral-800 md:text-lg font-medium"
+    >
+      Countdown Begins
+    </p>
+
+    <!-- Countdown button -->
+    <div
+      id="ctaCountdownBox"
+      class="mt-6 inline-flex items-center justify-center rounded-2xl bg-rose-600 px-8 py-4 text-white font-semibold text-lg shadow"
+    >
+<span
+  id="ctaCountdownText"
+  class="font-mono font-semibold tracking-wider"
+>
+  --:--:--:--
+</span>
+    </div>
+
+  </div>
+</section>
+
 
       <!-- Contact -->
       <section id="contact" class="bg-white border-t border-neutral-200">
@@ -377,7 +444,6 @@ function setupSmoothScroll() {
   });
 }
 
-
 //-- Countdown
 function startHeaderCountdown(targetDate) {
   const el = document.getElementById("countdownStrip");
@@ -401,12 +467,118 @@ function startHeaderCountdown(targetDate) {
     const s = Math.floor((diff / 1000) % 60);
 
     el.textContent =
-      `${pad(d)}D:${pad(h)}H:${pad(m)}m:${pad(s)}s`;
+      `${pad(d)}D:${pad(h)}H:${pad(m)}M:${pad(s)}S`;
   }
 
   update();
   setInterval(update, 1000);
 }
+
+
+//--Coutndown function
+function startCTACountdown(targetDate) {
+  const textEl = document.getElementById("ctaCountdownText");
+  const headingEl = document.getElementById("ctaCountdownHeading");
+
+  function pad(n) {
+    return String(n).padStart(2, "0");
+  }
+
+  function update() {
+    const now = Date.now();
+    const diff = targetDate - now;
+
+    if (diff <= 0) {
+      headingEl.textContent = "Applications Closed";
+      textEl.textContent = "Application is Over";
+      return;
+    }
+
+    const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const h = Math.floor((diff / (1000 * 60 * 60)) % 24);
+    const m = Math.floor((diff / (1000 * 60)) % 60);
+    const s = Math.floor((diff / 1000) % 60);
+
+    headingEl.textContent = "Countdown Begins";
+    textEl.textContent =
+      `${pad(d)}D:${pad(h)}H:${pad(m)}M:${pad(s)}S`;
+  }
+
+  update();
+  setInterval(update, 1000);
+}
+
+
+function renderUpdatesTicker() {
+  const ticker = document.getElementById("updatesTicker");
+  const content = document.getElementById("updatesTickerContent");
+
+  if (!ticker || !content) return;
+
+  const newUpdates = importantUpdates.filter(u => u.new === true);
+  if (newUpdates.length === 0) return;
+
+  // Build HTML with clickable links if URL exists
+  const buildHTML = () =>
+    newUpdates.map(u => {
+      return u.url && u.url !== "#"
+        ? `<a href="${u.url}" class="hover:underline">${u.title}</a>`
+        : `<span>${u.title}</span>`;
+    }).join(`<span class="mx-4 text-rose-400">•</span>`);
+
+  content.innerHTML = `
+  <span
+    class="inline-flex items-center rounded-md bg-rose-100 px-2 py-0.5 text-xs font-semibold text-rose-700 mr-3"
+  >
+    NEW
+  </span>
+  ${buildHTML()}
+`;
+
+  ticker.classList.remove("hidden");
+
+  let position = 0;
+  let paused = false;
+  let animationId;
+
+  // Pause on hover
+  content.addEventListener("mouseenter", () => paused = true);
+  content.addEventListener("mouseleave", () => paused = false);
+
+  // Wait for layout calculation
+  requestAnimationFrame(() => {
+    const containerWidth = content.parentElement.offsetWidth;
+    const textWidth = content.scrollWidth;
+
+    // If fully visible → no animation
+    if (textWidth <= containerWidth) {
+      content.style.transform = "translateX(0)";
+      return;
+    }
+
+    // Duplicate ONLY when needed
+    content.innerHTML +=
+      `<span class="mx-6 text-rose-300">•</span>` +
+      content.innerHTML;
+
+    function animate() {
+      if (!paused) {
+        position -= 0.25; // slow, readable speed
+        content.style.transform = `translateX(${position}px)`;
+
+        if (Math.abs(position) >= textWidth) {
+          position = 0;
+        }
+      }
+      animationId = requestAnimationFrame(animate);
+    }
+
+    animate();
+  });
+}
+
+
+
 
 
 // Initialize the application once the DOM is fully loaded
@@ -418,9 +590,9 @@ document.addEventListener('DOMContentLoaded', () => {
     new Date("February 16, 2026 09:00:00").getTime();
 
   startHeaderCountdown(workshopStart);
+  startCTACountdown(workshopStart);
+  renderUpdatesTicker(); // 🔔 NEW
 });
-
-
 
 
 
