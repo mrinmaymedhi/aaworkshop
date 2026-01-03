@@ -142,42 +142,77 @@ function renderWorkshopLanding() {
   if (!root) return;
 
   root.innerHTML = `
-      <!-- Sticky Apply bar -->
-<div class="sticky top-0 z-50 backdrop-blur bg-white/80 border-b border-neutral-200">
-  <div class="mx-auto max-w-6xl px-4 py-3">
-    
-    <!-- Top row -->
-    <div class="flex items-center gap-3">
-      <span class="text-sm font-semibold tracking-wide uppercase text-rose-700">
-        A&A Workshop
-      </span>
+<!-- Sticky Header -->
+<div class="sticky top-0 z-50">
 
-      <nav class="ml-auto hidden md:flex items-center gap-6 text-sm">
-        <a href="#updates" class="hover:text-rose-700">Updates</a>
-        <a href="#about" class="hover:text-rose-700">About</a>
-        <a href="#speakers" class="hover:text-rose-700">Resource Persons</a>
-        <a href="#eligibility" class="hover:text-rose-700">Eligibility</a>
-        <a href="#orgs" class="hover:text-rose-700">Organisers</a>
-        <a href="#contact" class="hover:text-rose-700">Contact</a>
-      </nav>
+  <!-- Header Bar -->
+  <div class="relative backdrop-blur bg-white/80 border-b border-neutral-200">
+    <div class="mx-auto max-w-6xl px-4 py-3">
+
+      <!-- Row 1: Title + Nav / Hamburger -->
+      <div class="flex items-center gap-3">
+
+        <!-- Title -->
+        <span class="text-sm font-semibold tracking-wide uppercase text-rose-700">
+          A&A Workshop
+        </span>
+
+        <!-- Desktop Navigation -->
+        <nav class="ml-auto hidden md:flex items-center gap-6 text-sm">
+          <a href="#updates" class="hover:text-rose-700">Updates</a>
+          <a href="#about" class="hover:text-rose-700">About</a>
+          <a href="#speakers" class="hover:text-rose-700">Resource Persons</a>
+          <a href="#eligibility" class="hover:text-rose-700">Eligibility</a>
+          <a href="#orgs" class="hover:text-rose-700">Organisers</a>
+          <a href="#contact" class="hover:text-rose-700">Contact</a>
+        </nav>
+
+        <!-- Mobile Hamburger -->
+        <button
+          id="mobileMenuBtn"
+          class="ml-auto md:hidden inline-flex items-center justify-center rounded-lg border border-neutral-300 p-2"
+          aria-label="Open menu"
+        >
+          ☰
+        </button>
+
+      </div>
+
+      <!-- Row 2: Countdown strip (ALWAYS below title) -->
+      <div class="mt-1 text-xs text-neutral-700 flex items-center gap-2">
+        <span class="font-medium">Workshop starts in</span>
+        <span
+          id="countdownStrip"
+          class="font-mono font-semibold text-rose-700 tracking-wider"
+        >
+          --:--:--:--
+        </span>
+      </div>
+
     </div>
-
-    <!-- Countdown strip -->
-    <div class="mt-1 text-xs text-neutral-700 flex items-center gap-2">
-      <span class="font-medium">Workshop starts in</span>
-      <span
-        id="countdownStrip"
-        class="font-mono font-semibold text-rose-700 tracking-wider"
-      >
-        --:--:--:--
-      </span>
-    </div>
-
   </div>
+
+  <!-- Mobile Menu (slides DOWN below header, does NOT push header) -->
+  <div
+    id="mobileMenu"
+    class="absolute left-0 right-0 top-full
+           md:hidden bg-white border-b border-neutral-200
+           overflow-hidden
+           max-h-0 opacity-0
+           transition-all duration-300 ease-in-out"
+  >
+    <nav class="mx-auto max-w-6xl px-4 py-4 space-y-3 text-sm">
+      <a href="#updates" class="block hover:text-rose-700">Updates</a>
+      <a href="#about" class="block hover:text-rose-700">About</a>
+      <a href="#speakers" class="block hover:text-rose-700">Resource Persons</a>
+      <a href="#eligibility" class="block hover:text-rose-700">Eligibility</a>
+      <a href="#orgs" class="block hover:text-rose-700">Organisers</a>
+      <a href="#contact" class="block hover:text-rose-700">Contact</a>
+    </nav>
+  </div>
+
 </div>
 
-        </div>
-      </div>
 
 
 <!-- Recent Updates Ticker -->
@@ -579,12 +614,44 @@ function renderUpdatesTicker() {
 
 
 
+function setupMobileMenu() {
+  const btn = document.getElementById("mobileMenuBtn");
+  const menu = document.getElementById("mobileMenu");
+
+  if (!btn || !menu) return;
+
+  btn.addEventListener("click", () => {
+    const open = menu.classList.contains("max-h-96");
+
+    if (open) {
+      menu.classList.remove("max-h-96", "opacity-100");
+      menu.classList.add("max-h-0", "opacity-0");
+      btn.textContent = "☰";
+    } else {
+      menu.classList.remove("max-h-0", "opacity-0");
+      menu.classList.add("max-h-96", "opacity-100");
+      btn.textContent = "✕";
+    }
+  });
+
+  // Close on link click
+  menu.addEventListener("click", (e) => {
+    if (e.target.tagName === "A") {
+      menu.classList.remove("max-h-96", "opacity-100");
+      menu.classList.add("max-h-0", "opacity-0");
+      btn.textContent = "☰";
+    }
+  });
+}
+
+
 
 
 // Initialize the application once the DOM is fully loaded
 document.addEventListener('DOMContentLoaded', () => {
   renderWorkshopLanding();
   setupSmoothScroll();
+  setupMobileMenu();
 
   const workshopStart =
     new Date("February 16, 2026 09:00:00").getTime();
