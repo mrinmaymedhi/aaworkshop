@@ -221,10 +221,14 @@ function renderWorkshopLanding() {
   class="hidden border-b border-rose-200 bg-rose-50 overflow-hidden"
 >
   <div class="mx-auto max-w-6xl px-4">
-    <div
-      id="updatesTickerContent"
-      class="whitespace-nowrap py-2 text-sm text-rose-800 font-medium cursor-pointer"
-    >
+<div
+  id="updatesTickerContent"
+  class="whitespace-nowrap py-2
+         text-xs text-neutral-700
+         font-medium tracking-wider
+         cursor-pointer"
+>
+
       <!-- injected by JS -->
     </div>
   </div>
