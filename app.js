@@ -175,13 +175,12 @@ function renderWorkshopLanding() {
           id="mobileMenuBtn"
           class="ml-auto md:hidden
                  inline-flex items-center justify-center
-                 h-15 w-15 rounded-full
+                 h-15 w-15
                  bg-white/90 backdrop-blur
-                 border border-neutral-300
-                 shadow-md
+                 shadow-none
                  text-neutral-700
                  transition-all duration-200
-                 hover:shadow-lg hover:bg-white
+                 hover:shadow-none hover:bg-white
                  active:scale-95"
           aria-label="Open menu"
         >
@@ -693,6 +692,7 @@ document.addEventListener('DOMContentLoaded', () => {
   startCTACountdown(workshopStart);
   renderUpdatesTicker(); // 🔔 NEW
 });
+
 
 
 
