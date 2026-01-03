@@ -685,28 +685,27 @@ function setupMobileMenu() {
     btn.setAttribute("aria-expanded", "false");
   }
 
-  // Toggle on hamburger click
+  // Toggle button
   btn.addEventListener("click", (e) => {
-    e.stopPropagation(); // prevent document click
+    e.stopPropagation();
     isOpen ? closeMenu() : openMenu();
   });
 
-  // Prevent clicks INSIDE menu from closing it
-  menu.addEventListener("click", (e) => {
-    e.stopPropagation();
-  });
+  // ✅ ONE unified outside-click handler (desktop + mobile)
+  document.addEventListener("pointerdown", (e) => {
+    if (!isOpen) return;
 
-  // ✅ Close ONLY when clicking/touching outside
-  document.addEventListener("click", () => {
-    if (isOpen) closeMenu();
-  });
+    const clickedInsideMenu =
+      menu.contains(e.target) || btn.contains(e.target);
 
-  document.addEventListener("touchstart", () => {
-    if (isOpen) closeMenu();
+    if (!clickedInsideMenu) {
+      closeMenu();
+    }
   });
 }
 
 setupMobileMenu();
+
 
 
 
@@ -729,6 +728,7 @@ document.addEventListener('DOMContentLoaded', () => {
   startCTACountdown(workshopStart);
   renderUpdatesTicker(); // 🔔 NEW
 });
+
 
 
 
