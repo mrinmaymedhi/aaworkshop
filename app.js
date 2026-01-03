@@ -154,7 +154,7 @@ function renderWorkshopLanding() {
 
         <!-- Title -->
 <span
-  class="text-xl font-semibold tracking-wide uppercase text-rose-700
+  class="text-sm font-semibold tracking-wide uppercase text-rose-700
          leading-none block"
 >
           A&A Workshop
@@ -726,6 +726,7 @@ document.addEventListener('DOMContentLoaded', () => {
   startCTACountdown(workshopStart);
   renderUpdatesTicker(); // 🔔 NEW
 });
+
 
 
 
