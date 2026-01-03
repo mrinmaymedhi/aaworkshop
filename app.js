@@ -687,30 +687,22 @@ function setupMobileMenu() {
 
   // Toggle on hamburger click
   btn.addEventListener("click", (e) => {
-    e.stopPropagation(); // ⛔ prevent document click
+    e.stopPropagation(); // prevent document click
     isOpen ? closeMenu() : openMenu();
   });
 
-  // Close when clicking menu links
+  // Prevent clicks INSIDE menu from closing it
   menu.addEventListener("click", (e) => {
-    e.stopPropagation(); // ⛔ prevent document click
-    if (e.target.tagName === "A") {
-      closeMenu();
-    }
+    e.stopPropagation();
   });
 
-  // ✅ CLOSE WHEN CLICKING / TOUCHING OUTSIDE
+  // ✅ Close ONLY when clicking/touching outside
   document.addEventListener("click", () => {
-    if (isOpen) {
-      closeMenu();
-    }
+    if (isOpen) closeMenu();
   });
 
-  // ✅ MOBILE TOUCH SUPPORT (important)
   document.addEventListener("touchstart", () => {
-    if (isOpen) {
-      closeMenu();
-    }
+    if (isOpen) closeMenu();
   });
 }
 
@@ -736,6 +728,7 @@ document.addEventListener('DOMContentLoaded', () => {
   startCTACountdown(workshopStart);
   renderUpdatesTicker(); // 🔔 NEW
 });
+
 
 
 
