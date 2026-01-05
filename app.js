@@ -10,7 +10,7 @@ const importantDates = [
   {
     label: 'Email to Selected Participants',
     value: '10 January, 2026',
-    past: true
+    past: false
   },
   {
     label: 'Workshop Dates',
