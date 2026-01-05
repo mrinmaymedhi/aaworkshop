@@ -459,7 +459,7 @@ function renderWorkshopLanding() {
                 <p class="mt-4 text-sm text-neutral-700">
                     <span class="font-medium">Venue:</span> Bhattadev University, Bajali (Pathsala), Assam
                 </p>
-                <p class="mt-4 text-sm text-neutral-700">For updates, check your email after the selection list is published on <span class="font-medium">10 January, 2026</span>.</p>
+                <p class="mt-4 text-sm text-neutral-700">For updates, please check your email.</p>
             </div>
             <div class="rounded-2xl border border-neutral-200 overflow-hidden">
                 <iframe 
