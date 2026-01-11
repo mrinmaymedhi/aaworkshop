@@ -10,7 +10,7 @@ const importantDates = [
   {
     label: 'Email to Selected Participants',
     value: '10 Jan, 2026',
-    past: false
+    past: true
   },
   {
     label: 'Workshop Dates',
@@ -21,7 +21,7 @@ const importantDates = [
 
 
 const importantUpdates = [
-  { title: 'Selected participants will be notified via email by 10 January, 2026.', date: '28 Dec 2025', url: '#', new: true },
+  { title: 'Selected participants will be notified via email by 10 January, 2026.', date: '28 Dec 2025', url: '#', new: false },
   { title: 'Application link is now live.', date: '11 Nov 2025', url: '#', new: false },
   { title: 'Download workshop poster.', date: '11 Nov 2025', url: 'AA_Workshop_Poster.pdf', new: false },
 ];
@@ -741,6 +741,7 @@ document.addEventListener('DOMContentLoaded', () => {
   startCTACountdown(workshopStart);
   renderUpdatesTicker(); // 🔔 NEW
 });
+
 
 
 
