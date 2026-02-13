@@ -1,5 +1,5 @@
 // --- Data Definition (from WorkshopLanding.tsx) ---
-const APPLY_URL = "https://forms.gle/wK1D5u2v4zYUiwBb7";
+const APPLY_URL = "Final-schedule.pdf";
 
 const importantDates = [
   {
@@ -311,7 +311,7 @@ function renderWorkshopLanding() {
                     ${renderDates()}
                   </ul>
                   <a href="${APPLY_URL}" target="_blank" rel="noreferrer" class="mt-6 inline-flex w-full items-center justify-center rounded-xl border border-rose-200 bg-rose-50 px-4 py-2 font-semibold text-rose-700 hover:bg-rose-100 transition-colors">
-                    Application is Over
+                    Programme Schedule
                   </a>
                 </div>
               </div>
@@ -741,6 +741,7 @@ document.addEventListener('DOMContentLoaded', () => {
   startCTACountdown(workshopStart);
   renderUpdatesTicker(); // 🔔 NEW
 });
+
 
 
 
