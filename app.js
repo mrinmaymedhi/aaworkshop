@@ -15,7 +15,7 @@ const importantDates = [
   {
     label: 'Workshop Dates',
     value: '16–17 Feb, 2026',
-    past: false
+    past: true
   },
 ];
 
