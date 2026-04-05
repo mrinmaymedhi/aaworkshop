@@ -202,12 +202,12 @@ function renderWorkshopLanding() {
          leading-none"
 >
         <span class="font-medium">Workshop starts in</span>
-        <span
-          id="countdownStrip"
-          class="font-mono font-semibold text-rose-700 tracking-wider"
-        >
-          --:--:--:--
-        </span>
+        // <span
+        //   id="countdownStrip"
+        //   class="font-mono font-semibold text-rose-700 tracking-wider"
+        // >
+        //   --:--:--:--
+        // </span>
       </div>
 
     </div>
